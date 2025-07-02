@@ -36,7 +36,7 @@ h1 {
   width: calc(100vw - 175px); /* ancho casi completo con 20px margen a cada lado */
   height: 170px;
 
-  background:  linear-gradient(to right, #45729a, #709092);
+  background:  linear-gradient(to right, #ffffff, #ffffff);
   border-radius: 35px; /* bordes más redondeados */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
@@ -71,3 +71,4 @@ h1 {
   font-size: 1rem;
 
 }
+

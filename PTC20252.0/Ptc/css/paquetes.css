@@ -87,7 +87,7 @@ main {
 
 /* Botón Eliminar */
 .btn-eliminar {
-  background-color: #e53935;   /* rojo */
+  background-color: #c53431;   /* rojo */
   color: white;
   border: none;
   padding: 0.4rem 0.8rem;
@@ -98,7 +98,7 @@ main {
 }
 
 .btn-eliminar:hover {
-  background-color: #c62828;   /* rojo más oscuro */
+  background-color: #a72222;   /* rojo más oscuro */
   color: white;
 }
 
