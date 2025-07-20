@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+  
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding-left: 150px;
+    padding-top: 30px;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.grafica-container {
+    background: linear-gradient(180deg, #e1f5ff80, #c2e9ff80);
+    box-shadow: 8px 8px 16px #b0d3e0, -8px -8px 16px #ffffff;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 35px;
+    padding: 50px;
+    width: 450px;
+    transition: transform 0.7s ease;
+}
+
+.grafica-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(14, 105, 191, 0.2);
+}
+
+h2 {
+    text-align: center;
+    font-size: 0.98rem;
+    font-weight: 900;
+    color: #111;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+canvas {
+    display: block;
+    margin: auto;
+}
+
+/* Para la gráfica de pastel (mantén cuadrado) */
+.grafica-pastel {
+    width: 330px !important;
+    height: 330px !important;
+}
+
+/* Para la gráfica de barras (más ancha que alta) */
+.grafica-barra {
+    width: 330px !important;
+    height: 330px !important;
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .grafica-container {
+        width: 90%;
+    }
+}

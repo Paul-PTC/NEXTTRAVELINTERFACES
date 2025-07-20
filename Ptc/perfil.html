@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="css/inicio.css">
+     <link rel="stylesheet" href="css/perfil.css">
    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"/>-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <body>
-     <aside class="sidebar collapsed"> 
+        <aside class="sidebar"> 
     <header class="sidebar-header">
         <a href="#" class="header-logo">
             <img src="img/12 jul 2025, 21_22_56.png" alt="log">
@@ -86,13 +87,63 @@
                     <span class="nav-icon fa fa-sign-out" style="font-size: 19px;"></span>
                     <span class="nav-label">Cerrar</span>
                 </a>
-                <span class="nav-tooltip">Cerrar</span>
+                <span  class="nav-tooltip">Cerrar</span>
             </li>
         </ul>
     </nav>
-</aside>
+
+  </aside>
 
 
+    <main class="main-content">
+  <div class="wrapper">
+    <div class="card">
+      
+      <!-- Imagen de perfil y botón -->
+      <div class="card-image">
+        <img src="img/zelaya.jpg" alt="Foto de perfil" />
+        <button id="changePhotoBtn" class="change-photo-btn">Cambiar Foto de Perfil</button>
+        <input type="file" id="fileInput" accept="image/*" style="display: none;" />
+      </div>
+
+      <!-- Contenido del perfil -->
+      <div class="card-content">
+        <h2 class="card-title">
+          Zelaya<br />
+          <span>Administrador</span>
+        </h2>
+
+        <!-- Información del perfil -->
+        <div class="card-text">
+          <h4>Nombre: <span>Zelaya</span></h4>
+          <h4>Apellido: <span>Lopez</span></h4>
+          <h4>Correo: <span>Zelayita@gmail.com</span></h4>
+        </div>
+
+        <!-- Pie del card con botón de cerrar sesión -->
+        <div class="card-footer">
+          <button id="logoutBtn" class="card-button">
+            <i class="fa fa-sign-out"></i> Cerrar sesión
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Modal de confirmación de cerrar sesión -->
+<div id="logoutModal" class="modal">
+  <div class="modal-content">
+    <p>¿Estás seguro que deseas cerrar sesión?</p>
+    <div class="modal-buttons">
+      <button id="confirmLogout" class="modal-btn accept-btn">Aceptar</button>
+      <button id="cancelLogout" class="modal-btn cancel-btn">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+
+    <script src="js/perfil.js"></script>
     <script src="js/inicio.js"></script>
 </body>
 </html>

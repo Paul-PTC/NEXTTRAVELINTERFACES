@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding-left: 150px;
+    padding-top: 30px;
+}
+
+
+.container{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 70px;
+
+}
+
+.container .card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 45px;
+
+     background: linear-gradient(180deg, #e1f5ff80, #c2e9ff80);  
+    box-shadow: 8px 8px 16px #b0d3e0, -8px -8px 16px #ffffff;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .card .content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.8;
+    transition: 0.9s;
+}
+
+.container .card:hover .content{
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+.container .card .content .imgBx{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 45%;
+    overflow: hidden;
+}
+
+.container .card .content .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .card .content .contentBx h3{
+    color: #090909;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    font-size: 0.98rem;
+     text-align: center;
+    margin: 20px 0 10px;
+    line-height: 1.1em;
+    
+
+}
+
+.container .card .content .contentBx h3 span {
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+.container .card .sci{
+position: absolute;
+bottom: 50px;
+display: flex;
+}
+
+.container .card .sci li {
+    list-style: none;
+    margin: 0 10px;
+    transform: translateY(25px);
+    transition: 0.7s;
+    opacity: 0;
+    transition-delay: calc(.1s * Var(--i));
+}
+
+.container .card:hover .sci li {
+    transform: translateY(0px);
+    opacity: 1;
+
+}
+
+.sci i{
+    color: #4f52d1;
+    transition: 0.3s ease;
+}
+
+.sci i:hover {
+    transform: translateY(2px);
+}
+
+/* ---------------- BUSCADOR ----------------- */
+.search-container {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    align-items: center;
+    margin: 30px auto 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 10px 15px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 8px 8px 16px #b0d3e0, -8px -8px 16px #ffffff;
+    position: relative;
+}
+
+.search-container input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: #000;
+}
+
+.search-container input::placeholder {
+    color: #555;
+}
+
+.search-button {
+    background: linear-gradient(135deg, #6366f1, #7f8bff);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.9s ease;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-button:hover {
+    background: linear-gradient(135deg, #4f52d1, #6f7aff);
+}
+
+/*boton*/
+
+.custom-button {
+  display: block;
+  margin: 10px auto 35px auto; /* espacio arriba y abajo, y centrado */
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #6366f1, #7f8bff);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 4px 4px 12px rgba(99, 102, 241, 0.5);
+  transition: background 0.5s ease;
+  width: 220px; /* ancho fijo para que no sea tan grande */
+  margin-right: 100px;
+   transition: transform 0.5s ease, box-shadow 0.9s ease, background 0.8s ease;
+}
+
+.custom-button:hover {
+    transform: translateY(-6px); /* Se eleva un poco */
+  box-shadow: 6px 6px 16px rgba(99, 102, 241, 0.6);
+  background: linear-gradient(135deg, #4f52d1, #6f7aff);
+}
+
+
+

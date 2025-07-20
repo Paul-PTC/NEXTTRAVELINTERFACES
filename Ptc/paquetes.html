@@ -6,10 +6,13 @@
      <link rel="stylesheet" href="css/inicio.css">
    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"/>-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/Paquetes.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
     <title>Document</title>
 </head>
 <body>
-     <aside class="sidebar collapsed"> 
+     <aside class="sidebar"> 
     <header class="sidebar-header">
         <a href="#" class="header-logo">
             <img src="img/12 jul 2025, 21_22_56.png" alt="log">
@@ -86,13 +89,112 @@
                     <span class="nav-icon fa fa-sign-out" style="font-size: 19px;"></span>
                     <span class="nav-label">Cerrar</span>
                 </a>
-                <span class="nav-tooltip">Cerrar</span>
+                <span  class="nav-tooltip">Cerrar</span>
             </li>
         </ul>
     </nav>
-</aside>
+
+  </aside>
+
+ 
 
 
-    <script src="js/inicio.js"></script>
+ <main class="main-content">
+
+  <div class="search-container">
+  <input type="text" id="searchInput" placeholder="¿Qué estás buscando?..." />
+  <button class="search-button">
+    <i class="fa fa-search"></i>
+  </button>
+
+</div>
+<button class="custom-button">Nuevo Sitio</button>
+
+
+
+<div class="container swiper">
+  <div class="wrapper">
+    <div class="card-list swiper-wrapper">
+
+      <!-- Tarjeta 1 -->
+      <div class="card swiper-slide">
+        <div class="card-image">
+          <img src="img/99.jpg" alt="El Tunco">
+          <p class="card-tag">El Tunco</p>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Playa El Tunco</h3>
+          <p class="card-text">Playa El Tunco es una famosa playa en El Salvador, conocida por su ambiente animado y sus excelentes olas para surfear.</p>
+          <div class="card-footer">
+           <a href="#" class="card-button"><i class="fa fa-pencil"></i>Editar</a>
+             <a href="#" class="card-button"> <i class="fa fa-trash"></i>Eliminar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="card swiper-slide">
+        <div class="card-image">
+          <img src="img/el-cuco-1.jpg" alt="El Cuco">
+          <p class="card-tag">El Cuco</p>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Playa El Cuco</h3>
+          <p class="card-text">Playa El Cuco es una famosa playa en El Salvador, conocida por su ambiente animado y sus excelentes olas para surfear.</p>
+          <div class="card-footer">
+            <a href="#" class="card-button"><i class="fa fa-pencil"></i>Editar</a>
+             <a href="#" class="card-button"> <i class="fa fa-trash"></i>Eliminar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="card swiper-slide">
+        <div class="card-image">
+          <img src="img/El-Zonte-9.jpg" alt="El Zonte">
+          <p class="card-tag">El Zonte</p>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Playa El Zonte</h3>
+          <p class="card-text">Playa El Zonte es una famosa playa en El Salvador, conocida por su ambiente animado y sus excelentes olas para surfear.</p>
+          <div class="card-footer">
+           <a href="#" class="card-button"><i class="fa fa-pencil"></i>Editar</a>
+             <a href="#" class="card-button"> <i class="fa fa-trash"></i>Eliminar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 4 -->
+      <div class="card swiper-slide">
+        <div class="card-image">
+          <img src="img/las fllores.jpg" alt="Las Flores">
+          <p class="card-tag">Las Flores</p>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Playa Las Flores</h3>
+          <p class="card-text">Playa Las Flores es una famosa playa en El Salvador, conocida por su ambiente animado y sus excelentes olas para surfear.</p>
+          <div class="card-footer">
+          <a href="#" class="card-button"><i class="fa fa-pencil"></i>Editar</a>
+             <a href="#" class="card-button"> <i class="fa fa-trash"></i>Eliminar</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Swiper controles -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</div>
+</main>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/inicio.js"></script>
+<script src="js/Paquetes.js"></script>
+
 </body>
 </html>
