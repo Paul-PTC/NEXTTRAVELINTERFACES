@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-     box-sizing: border-box;
+    box-sizing: border-box;
     font-family: "Inter", sans-serif;
+    transition: all 0.4s ease-in-out;
 }
 
 body {
@@ -23,57 +25,87 @@ body {
     padding-top: 30px;
 }
 
-
-.container{
-   display: flex;
+/* ---------------- CONTENEDOR DE TARJETAS ---------------- */
+.container {
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 70px;
+}
 
+/* Animación de entrada */
+.container .card {
+    animation: fadeSlideIn 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .container .card {
     position: relative;
     width: 300px;
-    height: 390px;
+    height: 450px;
     border-radius: 45px;
-
-     background: linear-gradient(180deg, #e1f5ff80, #c2e9ff80);  
+    background: linear-gradient(180deg, #e1f5ff80, #c2e9ff80);  
     box-shadow: 8px 8px 16px #b0d3e0, -8px -8px 16px #ffffff;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-
-
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 10s;
 }
 
-.container .card .content{
+/* Diferenciar clientes */
+.card.activo {
+    border: 3px solid #4f52d1;
+}
+.card.inactivo {
+    border: 3px solid #bbb;
+    opacity: 0.8;
+}
+
+/* Hover principal */
+.container .card:hover {
+    transform: translateY(-10px);
+}
+
+/* Contenido */
+.container .card .content {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     opacity: 0.8;
-    transition: 0.9s;
+    transition: 100s ease;
 }
 
-.container .card:hover .content{
+.container .card:hover .content {
     opacity: 1;
-    transform: translateY(-20px);
+    transform: translateY(20px);
 }
 
-.container .card .content .imgBx{
+.container .card .content .imgBx {
     position: relative;
     width: 150px;
     height: 150px;
     border-radius: 45%;
     overflow: hidden;
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
-.container .card .content .imgBx img{
+.container .card .content .imgBx img {
     position: absolute;
     top: 0;
     left: 0;
@@ -82,18 +114,20 @@ body {
     object-fit: cover;
 }
 
-.container .card .content .contentBx h3{
+.container .card .content .contentBx h3 {
     color: #090909;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 800;
     font-size: 0.98rem;
-     text-align: center;
+    text-align: center;
     margin: 20px 0 10px;
     line-height: 1.1em;
-    
-
 }
+.container .card .content .contentBx p {
+    text-align: center;
+}
+
 
 .container .card .content .contentBx h3 span {
     font-size: 12px;
@@ -101,34 +135,61 @@ body {
     text-transform: initial;
 }
 
-.container .card .sci{
-position: absolute;
-bottom: 50px;
-display: flex;
+/* --- Ocultar datos y botones por defecto --- */
+.container .card .content .contentBx p,
+.container .card .sci li {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 2s ease, opacity 2s ease;
+    pointer-events: none;
+    margin-top: 0;
+    
 }
 
+/* --- Mostrar datos y botones al hacer hover --- */
+.container .card:hover .content .contentBx p,
+.container .card:hover .sci li {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+    margin-top: 8px;
+
+}
+
+/* Para animar la aparición de los botones con retraso */
 .container .card .sci li {
     list-style: none;
     margin: 0 10px;
     transform: translateY(25px);
-    transition: 0.7s;
-    opacity: 0;
-    transition-delay: calc(.1s * Var(--i));
+    transition-delay: calc(.1s * var(--i));
+    transition: 0.9s ease;
 }
 
 .container .card:hover .sci li {
-    transform: translateY(0px);
-    opacity: 1;
-
+    transform: translateY(0);
 }
 
-.sci i{
+/* Botones de acción */
+.container .card .sci li a {
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    display: inline-block;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+}
+
+.container .card .sci li a:hover {
+    background: #6366f1;
+    color: white;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+}
+
+/* Íconos */
+.sci i {
     color: #4f52d1;
-    transition: 0.3s ease;
-}
-
-.sci i:hover {
-    transform: translateY(2px);
+    font-size: 16px;
 }
 
 /* ---------------- BUSCADOR ----------------- */
@@ -177,28 +238,36 @@ display: flex;
     background: linear-gradient(135deg, #4f52d1, #6f7aff);
 }
 
-/*boton*/
-
+/* ---------------- BOTÓN NUEVO CLIENTE ----------------- */
 .custom-button {
-  display: block;
-  margin: 10px auto 35px auto; /* espacio arriba y abajo, y centrado */
-  padding: 12px 32px;
-  font-size: 1rem;
-  font-weight: 700;
-  color: white;
-  background: linear-gradient(135deg, #6366f1, #7f8bff);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 4px 4px 12px rgba(99, 102, 241, 0.5);
-  transition: background 0.5s ease;
-  width: 220px; /* ancho fijo para que no sea tan grande */
-  margin-right: 100px;
-   transition: transform 0.5s ease, box-shadow 0.9s ease, background 0.8s ease;
+    display: block;
+    margin: 10px auto 35px auto;
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, #6366f1, #7f8bff);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 4px 4px 12px rgba(99, 102, 241, 0.5);
+    width: 220px;
+    margin-right: 100px;
+    transition: transform 0.5s ease, box-shadow 0.9s ease, background 0.8s ease;
 }
 
 .custom-button:hover {
-    transform: translateY(-6px); /* Se eleva un poco */
-  box-shadow: 6px 6px 16px rgba(99, 102, 241, 0.6);
-  background: linear-gradient(135deg, #4f52d1, #6f7aff);
+    transform: translateY(-6px);
+    box-shadow: 6px 6px 16px rgba(99, 102, 241, 0.6);
+    background: linear-gradient(135deg, #4f52d1, #6f7aff);
+    animation: pulse 0.6s ease infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.04);
+    }
 }
